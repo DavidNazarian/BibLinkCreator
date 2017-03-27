@@ -8,18 +8,18 @@ The category-A identifiers that can be used are the following:
 
 Identifier | Description
 ---------- | -----------
-arXiv ID   | [arXiv.org identifier] (https://arxiv.org/help/arxiv_identifier)
-DOI        | [Digital Object Identifier] (http://www.doi.org/doi_handbook/1_Introduction.html)
-ISBN       | [International Standard Book Number] (https://www.isbn-international.org/sites/default/files/ISBN%20Manual%202012%20-corr.pdf)
-LCCN       | [Library of Congress Control Number] (https://www.loc.gov/marc/lccn_structure.html)
-OCLC       | [Online Computer Library Center Control Number] (https://www.oclc.org/support/services/batchload/controlnumber.en.html)
-PMID       | [PubMed identifier] (https://support.ncbi.nlm.nih.gov/link/portal/28045/28049/Article/508/What-is-a-unique-record-identifier)
+arXiv ID   | [arXiv.org identifier](https://arxiv.org/help/arxiv_identifier)
+DOI        | [Digital Object Identifier](http://www.doi.org/doi_handbook/1_Introduction.html)
+ISBN       | [International Standard Book Number](https://www.isbn-international.org/sites/default/files/ISBN%20Manual%202012%20-corr.pdf)
+LCCN       | [Library of Congress Control Number](https://www.loc.gov/marc/lccn_structure.html)
+OCLC       | [Online Computer Library Center Control Number](https://www.oclc.org/support/services/batchload/controlnumber.en.html)
+PMID       | [PubMed identifier](https://support.ncbi.nlm.nih.gov/link/portal/28045/28049/Article/508/What-is-a-unique-record-identifier)
 
 The category-B identifiers are the following:
 
 Identifier   | Description
 ------------ | -----------
-ISSN         | [International Standard Serial Number] (http://www.issn.org/wp-content/uploads/2013/09/ISSNManual_ENG2015_23-01-2015.pdf)
+ISSN         | [International Standard Serial Number](http://www.issn.org/wp-content/uploads/2013/09/ISSNManual_ENG2015_23-01-2015.pdf)
 Journal title | The title of a serial publication
 
 The input RDF datasets can either be downloaded from bibliographic sources or can be created by the library by collecting data from various bibliographic APIs.
@@ -30,18 +30,18 @@ The category-B data are linked with stricter rules. It first matches same identi
 
 ## Table of Contents
 
-* [Version] (/README.md#version)
-* [Prerequisites] (/README.md#prerequisites)
-* [Usage] (/README.md#usage)
-* [Sample SPARQL queries] (/README.md#sample-sparql-queries)
- * [DBpedia bibliographic references] (/README.md#queries-for-the-dbpedia-bibliographic-references-rdf-dataset)
- * [DBLP] (/README.md#queries-for-the-dblp-rdf-dataset)
- * [Springer] (/README.md#queries-for-the-springer-rdf-dataset)
- * [Biblioteca Nacional de España (BNE)] (/README.md#queries-for-the-biblioteca-nacional-de-espa%C3%B1a-bne-rdf-dataset)
- * [British National Bibliography (BNB)] (/README.md#queries-for-the-british-national-bibliography-bnb-rdf-dataset)
- * [Deutsche Nationalbibliografie (DNB)] (/README.md#queries-for-the-deutsche-nationalbibliografie-dnb-rdf-dataset)
-* [Acknowledgment] (/README.md#acknowledgment)
-* [License] (/README.md#license)
+* [Version](/README.md#version)
+* [Prerequisites](/README.md#prerequisites)
+* [Usage](/README.md#usage)
+* [Sample SPARQL queries](/README.md#sample-sparql-queries)
+ * [DBpedia bibliographic references](/README.md#queries-for-the-dbpedia-bibliographic-references-rdf-dataset)
+ * [DBLP](/README.md#queries-for-the-dblp-rdf-dataset)
+ * [Springer](/README.md#queries-for-the-springer-rdf-dataset)
+ * [Biblioteca Nacional de España (BNE)](/README.md#queries-for-the-biblioteca-nacional-de-espa%C3%B1a-bne-rdf-dataset)
+ * [British National Bibliography (BNB)](/README.md#queries-for-the-british-national-bibliography-bnb-rdf-dataset)
+ * [Deutsche Nationalbibliografie (DNB)](/README.md#queries-for-the-deutsche-nationalbibliografie-dnb-rdf-dataset)
+* [Acknowledgment](/README.md#acknowledgment)
+* [License](/README.md#license)
 
 ## Version
 
@@ -51,7 +51,7 @@ Version: `1.1.1`
 
 ## Prerequisites
 
-The library uses the Sesame API in order to communicate with a triplestore. It has been successfully tested with the [Ontotext GraphDB 7 Free edition] (http://graphdb.ontotext.com/documentation/7.0/free/).
+The library uses the Sesame API in order to communicate with a triplestore. It has been successfully tested with the [Ontotext GraphDB 7 Free edition](http://graphdb.ontotext.com/documentation/7.0/free/).
 
 The hardware needed to optimally use the library depends on the linking task. Some of the parameters that increase the need for  resources are the following:
 
@@ -61,12 +61,12 @@ The hardware needed to optimally use the library depends on the linking task. So
 
 ## Usage
 
-Let's suppose that we want to create ISBN links between the [DBpedia bibliographic references RDF dataset] (http://downloads.dbpedia.org/temporary/citations/enwiki-20160305-citation-data.ttl.bz2) and the [DBLP RDF dataset] (http://dblp.l3s.de/dblp.rdf.gz).
+Let's suppose that we want to create ISBN links between the [DBpedia bibliographic references RDF dataset](http://downloads.dbpedia.org/temporary/citations/enwiki-20160305-citation-data.ttl.bz2) and the [DBLP RDF dataset](http://dblp.l3s.de/dblp.rdf.gz).
 
 In can be done after we:
 
-1. Create a repository in Ontotext GraphDB, call it "DBpediaCitations" and import the [DBpedia references RDF dataset] (http://downloads.dbpedia.org/temporary/citations/enwiki-20160305-citation-data.ttl.bz2).
-2. Create a second repository, call it "DBLP" and import the [DBLP RDF dataset] (http://dblp.l3s.de/dblp.rdf.gz).
+1. Create a repository in Ontotext GraphDB, call it "DBpediaCitations" and import the [DBpedia references RDF dataset](http://downloads.dbpedia.org/temporary/citations/enwiki-20160305-citation-data.ttl.bz2).
+2. Create a second repository, call it "DBLP" and import the [DBLP RDF dataset](http://dblp.l3s.de/dblp.rdf.gz).
 3. Create a third repository for the results (preprocessed data and links) and call it "BibLinkCreator".
 4. Build the biblinkcreator-1.1.1.jar file and include it in a Java project.
 5. Use the following code:
@@ -112,7 +112,7 @@ The `Query` class is not part of the library. Sample extraction queries for a nu
 
 ## Sample SPARQL queries
 
-#### Queries for the [DBpedia bibliographic references RDF dataset] (http://downloads.dbpedia.org/temporary/citations/enwiki-20160305-citation-data.ttl.bz2)
+#### Queries for the [DBpedia bibliographic references RDF dataset](http://downloads.dbpedia.org/temporary/citations/enwiki-20160305-citation-data.ttl.bz2)
 
 ```sparql
 #DBpedia arXiv ID query (category-A)
@@ -218,7 +218,7 @@ WHERE {
       }
 ```
 
-#### Queries for the [DBLP RDF dataset] (http://dblp.l3s.de/dblp.rdf.gz)
+#### Queries for the [DBLP RDF dataset](http://dblp.l3s.de/dblp.rdf.gz)
 
 ```sparql
 #DBLP DOI query (category-A)
@@ -264,7 +264,7 @@ WHERE {
       }
 ```
 
-#### Queries for the [Springer RDF dataset] (http://lod.springer.com/data/dumps)
+#### Queries for the [Springer RDF dataset](http://lod.springer.com/data/dumps)
 
 ```sparql
 #Springer DOI query (category-A)
@@ -292,7 +292,7 @@ WHERE {
       }
 ```
 
-#### Queries for the [Biblioteca Nacional de España (BNE) RDF dataset] (http://datos.bne.es/datadumps/bibliograficos.nt.bz2)
+#### Queries for the [Biblioteca Nacional de España (BNE) RDF dataset](http://datos.bne.es/datadumps/bibliograficos.nt.bz2)
 
 ```sparql
 #BNE ISBN query (category-A)
@@ -328,7 +328,7 @@ WHERE {
       }
 ```
 
-#### Queries for the [British National Bibliography (BNB) RDF dataset] (http://www.bl.uk/bibliographic/download.html)
+#### Queries for the [British National Bibliography (BNB) RDF dataset](http://www.bl.uk/bibliographic/download.html)
 
 ```sparql
 #BNB ISBN query (category-A)
@@ -387,7 +387,7 @@ WHERE {
       }
 ```
 
-#### Queries for the [Deutsche Nationalbibliografie (DNB) RDF dataset] (http://datendienst.dnb.de/cgi-bin/mabit.pl?userID=opendata&pass=opendata&cmd=login)
+#### Queries for the [Deutsche Nationalbibliografie (DNB) RDF dataset](http://datendienst.dnb.de/cgi-bin/mabit.pl?userID=opendata&pass=opendata&cmd=login)
 
 ```sparql
 #DNB ISBN query (category-A)
