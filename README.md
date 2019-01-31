@@ -108,7 +108,7 @@ if (recordCount > 0) {
 
 The GraphDB server path used in the example is its default (http://localhost:7200), change it according to your settings.
 
-The `Query` class is not part of the library. Sample extraction queries for a number of RDF datasets are given bellow.
+The `Query` class is not part of the library. Sample extraction queries for a number of RDF datasets are given below.
 
 ## Sample SPARQL queries
 
